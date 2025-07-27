@@ -13,9 +13,9 @@
                 <div class="col-auto">
                     <button type="button"
                             data-bs-toggle="collapse"
-                            data-bs-target="#collapse_example"
+                            data-bs-target="#collapseSettings"
                             aria-expanded="true"
-                            aria-controls="collapse_example"
+                            aria-controls="collapseSettings"
                             class="btn btn-light p-1 border"
                             style="width: 40px; height: 40px;">
                             <img src="{{ url_for('static', filename='settings_icon.png') }}"
@@ -23,43 +23,43 @@
                     </button>
                 </div>
             </div>
-            <div class="collapse" id="collapse_example">
+            <div class="collapse" id="collapseSettings">
                 <div class="card card-body">
                     <div class="dropdown">
                         <p class="text-center p-0 m-0">Time per turn</p>
-                        <button class="btn btn-secondary dropdown-toggle mb-3" style="width: 75%; display: block; margin-left: auto; margin-right: auto;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle mb-3" style="width: 75%; display: block; margin-left: auto; margin-right: auto;" type="button" id="turnTimeButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             40 seconds
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">10 seconds</a></li>
-                            <li><a class="dropdown-item" href="#">20 seconds</a></li>
-                            <li><a class="dropdown-item" href="#">40 seconds</a></li>
-                            <li><a class="dropdown-item" href="#">Unlimited</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="dropdown">
-                        <p class="text-center p-0 m-0">3 minutes</p>
-                        <button class="btn btn-secondary dropdown-toggle mb-3" style="width: 75%; display: block; margin-left: auto; margin-right: auto;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            3 minutes
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                            <li><a class="dropdown-item" href="#">1 minute</a></li>
-                            <li><a class="dropdown-item" href="#">2 minutes</a></li>
-                            <li><a class="dropdown-item" href="#">3 minutes</a></li>
-                            <li><a class="dropdown-item" href="#">Unlimited</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="turnTimeButton">
+                            <li><a class="dropdown-item" id="turnTimeButtonChoice1" href="#">10 seconds</a></li>
+                            <li><a class="dropdown-item" id="turnTimeButtonChoice2" href="#">20 seconds</a></li>
+                            <li><a class="dropdown-item" id="turnTimeButtonChoice3" href="#">40 seconds</a></li>
+                            <li><a class="dropdown-item" id="turnTimeButtonChoice4" href="#">Unlimited</a></li>
                         </ul>
                     </div>
 
                     <div class="dropdown">
                         <p class="text-center p-0 m-0">Minutes per player</p>
-                        <button class="btn btn-secondary dropdown-toggle" style="width: 75%; display: block; margin-left: auto; margin-right: auto;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle mb-3" style="width: 75%; display: block; margin-left: auto; margin-right: auto;" type="button" id="gameTimeButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            3 minutes
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="gameTimeButton">
+                            <li><a class="dropdown-item" id="gameTimeButtonChoice1" href="#">1 minute</a></li>
+                            <li><a class="dropdown-item" id="gameTimeButtonChoice2" href="#">2 minutes</a></li>
+                            <li><a class="dropdown-item" id="gameTimeButtonChoice3" href="#">3 minutes</a></li>
+                            <li><a class="dropdown-item" id="gameTimeButtonChoice4" href="#">Unlimited</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown">
+                        <p class="text-center p-0 m-0">Starting player</p>
+                        <button class="btn btn-secondary dropdown-toggle" style="width: 75%; display: block; margin-left: auto; margin-right: auto;" type="button" id="startingPlayerButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Random
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                            <li><a class="dropdown-item" href="#">Random</a></li>
-                            <li><a class="dropdown-item" href="#">I start</a></li>
-                            <li><a class="dropdown-item" href="#">Opponent starts</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="startingPlayerButton">
+                            <li><a class="dropdown-item" id="startingPlayerButtonChoice1"href="#">Random</a></li>
+                            <li><a class="dropdown-item" id="startingPlayerButtonChoice2"href="#">I start</a></li>
+                            <li><a class="dropdown-item" id="startingPlayerButtonChoice3"href="#">Opponent starts</a></li>
                         </ul>
                     </div>
                 </div>
@@ -69,5 +69,6 @@
             
         </form>
     </div>
+    <script src="../static/home.js"></script>
 
 {%endblock%}
