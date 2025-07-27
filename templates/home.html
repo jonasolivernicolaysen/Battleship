@@ -1,0 +1,73 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+<div id="vm" class="d-flex justify-content-center align-items-center vh-100">
+    <div class="p-4 border rounded bg-light" style="min-width: 300px;">
+        <h1 class="text-center mb-4">Battleship</h1>
+        <form>
+            <div class="row g-2 mb-3">
+                <div class="col">
+                    <input class="form-control" type="text" placeholder="Name">
+                </div>
+                <div class="col-auto">
+                    <button type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse_example"
+                            aria-expanded="true"
+                            aria-controls="collapse_example"
+                            class="btn btn-light p-1 border"
+                            style="width: 40px; height: 40px;">
+                            <img src="{{ url_for('static', filename='settings_icon.png') }}"
+                             style="width: 100%; height: 100%; object-fit: contain;">
+                    </button>
+                </div>
+            </div>
+            <div class="collapse" id="collapse_example">
+                <div class="card card-body">
+                    <div class="dropdown">
+                        <p class="text-center p-0 m-0">Time per turn</p>
+                        <button class="btn btn-secondary dropdown-toggle mb-3" style="width: 75%; display: block; margin-left: auto; margin-right: auto;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            40 seconds
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">10 seconds</a></li>
+                            <li><a class="dropdown-item" href="#">20 seconds</a></li>
+                            <li><a class="dropdown-item" href="#">40 seconds</a></li>
+                            <li><a class="dropdown-item" href="#">Unlimited</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown">
+                        <p class="text-center p-0 m-0">3 minutes</p>
+                        <button class="btn btn-secondary dropdown-toggle mb-3" style="width: 75%; display: block; margin-left: auto; margin-right: auto;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            3 minutes
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item" href="#">1 minute</a></li>
+                            <li><a class="dropdown-item" href="#">2 minutes</a></li>
+                            <li><a class="dropdown-item" href="#">3 minutes</a></li>
+                            <li><a class="dropdown-item" href="#">Unlimited</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown">
+                        <p class="text-center p-0 m-0">Minutes per player</p>
+                        <button class="btn btn-secondary dropdown-toggle" style="width: 75%; display: block; margin-left: auto; margin-right: auto;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Random
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                            <li><a class="dropdown-item" href="#">Random</a></li>
+                            <li><a class="dropdown-item" href="#">I start</a></li>
+                            <li><a class="dropdown-item" href="#">Opponent starts</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-outline-primary w-100">Create</button>
+
+            
+        </form>
+    </div>
+
+{%endblock%}
