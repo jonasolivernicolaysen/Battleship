@@ -3,25 +3,27 @@ document.addEventListener("DOMContentLoaded", function () {
     const gameTimeButton = document.getElementById("gameTimeButton");
     const startingPlayerButton = document.getElementById("startingPlayerButton");
 
-    document.querySelectorAll("[id^='turnTimeButtonChoice']").forEach(item => {
-        item.addEventListener("click", function(e) {
-            e.preventDefault();
-            turnTimeButton.innerHTML = this.innerHTML;
+    const turnTimeValue = document.getElementById("turnTimeValue");
+    const gameTimeValue = document.getElementById("gameTimeValue");
+    const startingPlayerValue = document.getElementById("startingPlayerValue");
+    
+    function setupDropdownMenu(buttonId, choicePrefix, updateField) {
+        document.querySelectorAll(`[id^='${choicePrefix}']`).forEach(item => {
+            item.addEventListener("click", function(e) {
+                e.preventDefault();
+                buttonId.textContent = this.textContent;
+                updateField.textContent = this.textContent;
+            });
         });
-    });
-
-    document.querySelectorAll("[id^='gameTimeButtonChoice']").forEach(item => {
-        item.addEventListener("click", function(e) {
-            e.preventDefault();
-            gameTimeButton.innerHTML = this.innerHTML;
-        });
-    });
-
-    document.querySelectorAll("[id^='startingPlayerButtonChoice']").forEach(item => {
-        item.addEventListener("click", function(e) {
-            e.preventDefault();
-            startingPlayerButton.innerHTML = this.innerHTML;
-        });
-    });
+    };
+    setupDropdownMenu(turnTimeButton, "turnTimeButtonChoice", turnTimeValue);
+    setupDropdownMenu(gameTimeButton, "gameTimeButtonChoice", gameTimeValue);
+    setupDropdownMenu(startingPlayerButton, "startingPlayerButtonChoice", startingPlayerValue);
 });
 
+/*
+document.getElementById("createButton").addEventListener("click", function(e) {
+    e.preventDefault();
+});
+
+*/

@@ -1,0 +1,13 @@
+homepage:
+
+user chooses a username and room code, room code will be created automatically if field is empty and user is forwarded to a war room
+
+war room:
+
+when another user joins the same room, both get assigned a team color and they both get one minute to place their ships.
+
+if timer runs out, the remaining ships will be placed randomly
+
+they both change turns, a users turn ends when it misses a ships
+
+when all ships are destroyed, the winner is announced and both players get the option to have a rematch

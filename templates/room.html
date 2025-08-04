@@ -2,5 +2,19 @@
 
 {%block content%}
 
+<p>Share this link with a friend</p>
+<p id="link_container"></p>
 
+
+<script src="../static/room.js"></script>
+
+
+<script>
+    
+    const gameId = "{{ game_id }}";
+    
+document.getElementById("link_container").innerHTML = window.location.href + `${gameId}`;
+
+`[id^='${choicePrefix}']`
+</script>
 {%endblock%}
